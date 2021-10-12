@@ -53,10 +53,6 @@ public class Conditions : MonoBehaviour
         //Lose Condition
         if (collider.gameObject.tag == "Water")
         {
-            //Currently lock not working
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
             SceneManager.LoadScene("LoseScene");
         }
     }

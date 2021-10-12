@@ -1456,6 +1456,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 9798751}
+  TimeLeft: 60
+  TimeRemaining: 0
+  TimerText: {fileID: 1794345517}
 --- !u!1 &513957027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,7 +3605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Timer: 30 Seconds'
+  m_Text: 'Timer: 60 Seconds'
 --- !u!222 &1794345518
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Conditions : MonoBehaviour
 {
+    //Score Stuff
     private int Score;
     public Text ScoreText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Timer Stuff
+    public float TimeLeft;
+    public int TimeRemaining;
+    public Text TimerText;
 
     // Update is called once per frame
     void Update()
@@ -23,8 +23,22 @@ public class Conditions : MonoBehaviour
         //Win Condition
         if (GameObject.FindGameObjectsWithTag("Coin").Length == 0)
         {
-            //Need to unlock cursor here too
-            SceneManager.LoadScene("WinScene");
+            if (TimeLeft > 0)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
+        }
+        
+        //Timer Codes
+        TimeLeft -= Time.deltaTime;
+        TimeRemaining = Mathf.FloorToInt(TimeLeft % 60);
+
+        TimerText.text = "Timer: " + TimeRemaining.ToString() + " seconds";
+        //Second Lose Condition
+        if (TimeLeft <= 0)
+        {
+            TimerText.text = "Timer: 0 seconds";
+            SceneManager.LoadScene("LoseScene");
         }
     }
 

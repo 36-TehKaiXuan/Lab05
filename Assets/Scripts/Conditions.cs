@@ -19,6 +19,13 @@ public class Conditions : MonoBehaviour
     void Update()
     {
         ScoreText.text = "Score: " + Score;
+
+        //Win Condition
+        if (GameObject.FindGameObjectsWithTag("Coin").Length == 0)
+        {
+            //Need to unlock cursor here too
+            SceneManager.LoadScene("WinScene");
+        }
     }
 
     void OnTriggerEnter(Collider collider)
